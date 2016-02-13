@@ -1,0 +1,11 @@
+%h1= @property.pName
+%p= @property.county
+%p=@property.locality
+%p= @property.pDescription
+%p=@property.price
+
+=link_to "Home", root_path
+=link_to "Edit", edit_property_path(@property)
+=link_to "Delete", property_path(@property),method: :delete, data:{confirm: "Are you sure"}
+
+ 

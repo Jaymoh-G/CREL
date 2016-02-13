@@ -1,0 +1,15 @@
+= simple_form_for(@property, html:{ class: 'form-vertical'}) do |f|
+ =f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a Category"}
+ =f.input :pName, label: "Property Name" 
+ =f.input :county, label: "County"
+ =f.input :locality, label: "Locality" 
+ =f.input :pDescription, label: "Property Description"
+ =f.input :price, label: "Price"
+ =f.input :fName, label: "First Name"
+ =f.input :lName, label: "Last Name"
+ =f.input :phone, label: "Phone"
+ =f.input :url, label: "Buy property" 
+ %br/
+ 
+ =f.button :submit
+ 

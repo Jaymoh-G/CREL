@@ -1,0 +1,4 @@
+%h1 Most Recent Listings
+- @properties.each do |property| 
+ %h2= link_to property.pName,property
+ =link_to "Create Advert", new_property_path 
