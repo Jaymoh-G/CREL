@@ -14,10 +14,10 @@ class PropertiesController < ApplicationController
 	end
 
 	def new
-		@property =Property.new	
+		@property =current_user.properties.build
 	end
 	def create
-		@property = Property.new(properties_params)
+		@property = current_user.properties.build(properties_params)
 		if @property.save
 			redirect_to @property
 		else

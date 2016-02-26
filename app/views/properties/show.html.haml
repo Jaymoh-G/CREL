@@ -3,6 +3,11 @@
 %p=@property.locality
 %p= @property.pDescription
 %p=@property.price
+%p Submitted by
+= @property.user.email
+%br/
+%button.btn.btn-default= link_to "Buy or Rent", @property.url
+%br/
 
 =link_to "Home", root_path
 =link_to "Edit", edit_property_path(@property)
