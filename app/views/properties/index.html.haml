@@ -1,3 +1,4 @@
-%h1 Most Recent Listings
+%h1 Recent Listings
 - @properties.each do |property| 
- %h2= link_to property.pName,property
+  = link_to (image_tag property.image.url(:medium)), property
+  %p= link_to property.pName,property

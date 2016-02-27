@@ -14,8 +14,9 @@ class PropertiesController < ApplicationController
 	end
 
 	def new
-		@property =current_user.properties.build
+		@property = current_user.properties.build
 	end
+
 	def create
 		@property = current_user.properties.build(properties_params)
 		if @property.save
@@ -44,7 +45,7 @@ class PropertiesController < ApplicationController
 	private
 
 	def properties_params
-		params.require(:property).permit(:pName,:county, :locality,:pDescription,:price,:fName,:lName,:phone,:url, :category_id)
+		params.require(:property).permit(:pName,:county, :locality,:pDescription,:price,:fName,:lName,:phone,:url, :category_id, :image)
 
 	end
 	def find_property
