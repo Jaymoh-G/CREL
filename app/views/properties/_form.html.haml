@@ -1,14 +1,17 @@
 = simple_form_for(@property, html:{ class: 'form-vertical'}) do |f|
+ Choose Category
  =f.collection_select :category_id, Category.all, :id, :name, {promt: "Choose a Category"}
+ Type
+ =f.collection_select :subcategory_id, Subcategory.all, :id, :name, {promt: "Choose a Subcategory"}
  =f.input :image, label: "image" 
  =f.input :pName, label: "Property Name" 
- =f.input :county, label: "County"
+ =f.input :county, label: "Town"
  =f.input :locality, label: "Locality" 
  =f.input :pDescription, label: "Property Description"
  =f.input :price, label: "Price"
  =f.input :fName, label: "First Name"
  =f.input :phone, label: "Phone"
- =f.input :url, label: "link to the property" 
+ 
  %br/
  
  =f.button :submit

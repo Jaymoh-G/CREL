@@ -1,0 +1,21 @@
+<h1>Search Results</h1>
+
+<% if @search.find_properties.empty? %>
+<p> No Records found</p>
+<% else %>
+<% @search.find_properties.each do |c| %>
+<% @search.find_properties.each do |property| %>
+
+<br>
+<div class="div">
+<h3> <%= link_to property.pName,c %></h3>
+<p> Price: KSH <%= c.price%></p>
+
+<p><%= c.county%></p>
+<p><%= c.locality%> area</p> 
+</div>
+<% end %>
+
+<% end %>
+<% end %>
+

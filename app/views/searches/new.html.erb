@@ -1,0 +1,28 @@
+<h1> Advanced Search</h1>
+<%= form_for @search, html: {class: "pure-form"} do |f| %>
+	<div class="field">
+		<%=f.label :Town %>
+		<%=f.text_field :county %>
+	</div>
+	<div>
+		<div class="field">
+			<%=f.label :category %>
+		
+			<%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true %>
+			
+		</div>
+		<div class="field">
+			<%=f.label :Type %>
+			
+			<%= f.collection_select :category_id, Subcategory.order(:name), :id, :name, include_blank: true %>
+			
+		</div>
+		
+		<div class="field">
+			<%=f.label :min_price, "Price Range" %><br /> Min_price
+			<%=f.text_field :min_price, size: 10 %><br/> Max_price
+			<%=f.text_field :max_price, size: 10 %>
+		</div>
+		<div class="actions"><%=f.submit "search" %></div>
+	</div>
+<% end %>

@@ -12,6 +12,7 @@ gem 'devise', '~> 3.5'
 gem 'haml', '~> 4.0'
 gem 'bootstrap-sass', '~> 3.3'
 gem "paperclip", "~> 4.3"
+gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc

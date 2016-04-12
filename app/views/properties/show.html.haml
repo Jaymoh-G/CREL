@@ -1,18 +1,37 @@
-.col-md-6.col-md-offset-3
-	= image_tag @property.image.url(:medium)
-	%h1= @property.pName
-	%p= @property.county
-	%p=@property.locality
-	%p= @property.pDescription
-	%p=@property.price
-	%p Submitted by
-	= @property.user.email
-	%br/
-	%button.btn.btn-default= link_to "Buy or Rent", @property.url
-	%br/
+#property_show.row
+  .col-md-8.col-md-offset-2
+    .panel.panel-default
+      .panel-heading.pin_image
+        = image_tag @property.image.url
+      .panel-body 
+        %h1= @property.pName
+        = @property.county
+        =@property.locality  
+        area
+        %br/
+        %br/
+        %p= @property.pDescription
+        Price(KSH)
+        %p=@property.price
+        
+      .panel-footer
+        .row
+          .col-md-6
+            %p.user
+            Email the owner at
+            =@property.user.email
+            or call 
+            =@property.phone
+          .col-md-6
+            .btn-group.pull-right
+              = link_to "Home", root_path
+              - if user_signed_in? and current_user.email==@property.user.email
+                = link_to "Edit", edit_property_path(@property)
+                = link_to "Delete", property_path(@property),method: :delete, data:{confirm: "Are you sure"}
+                
+               
+  
+     
 
-	=link_to "Home", root_path
-	=link_to "Edit", edit_property_path(@property)
-	=link_to "Delete", property_path(@property),method: :delete, data:{confirm: "Are you sure"}
 
-	 
+

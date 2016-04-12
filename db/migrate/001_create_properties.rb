@@ -4,7 +4,7 @@ class CreateProperties < ActiveRecord::Migration
       t.string :pName
       t.string :county
       t.string :locality
-      t.string :pDescription
+      t.text :pDescription
       t.integer :price
       t.string :fName
       t.string :lName

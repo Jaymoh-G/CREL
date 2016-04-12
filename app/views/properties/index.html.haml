@@ -1,4 +1,23 @@
-%h1 Recent Listings
-- @properties.each do |property| 
-  = link_to (image_tag property.image.url(:medium)), property
-  %p= link_to property.pName,property
+.col-md-12.col-md-offset-0
+  .container
+    %center Most Recent Listings 
+    %ul.nav.navbar-nav.navbar-left
+      - Subcategory.all.each do |subcategory|
+        %li= link_to subcategory.name, properties_path(subcategory: subcategory.name)  
+  #properties.transitions-enabled
+    - @properties.each do |property|
+      .col-md-6.col-md-3
+        = link_to (image_tag property.image.url(:medium)), property
+        .panel-body
+          %h2= link_to property.pName,property
+          = property.county
+          = property.locality
+          area
+          %br/
+          Price (KSH)
+          %p= property.price 
+              
+           
+
+
+  
